@@ -10,7 +10,7 @@ class ENV{
 	public static function set(string $filePath){
 		if(is_readable($filePath)){
 			self::$comma=rand();
-			self::$env=implode(self::$comma,file(__DIR__.'/../.env'));
+			self::$env=implode(self::$comma,file($filePath));
 		}else{
 			throw new Exception($filePath . ' is not exist', 1);
 		}
