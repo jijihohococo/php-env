@@ -33,7 +33,6 @@ if(!function_exists('gete')){
 			}
 			$getData=strpos($env,$data)!==FALSE ? getStringBetween($env,$data,$comma) : NULL;
 			ENV::setDataset($previousData,$getData);
-			putenv($data.$getData);
 			return $getData;
 		}
 	}

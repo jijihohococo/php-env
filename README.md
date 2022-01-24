@@ -47,11 +47,3 @@ And then you can get your data
 gete('APP_NAME');
 
 ```
-
-You can also get from by using 'getenv' method (which is not recommend)
-
-```php
-
-getenv('APP_NAME');
-
-```
