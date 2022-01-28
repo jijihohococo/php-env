@@ -8,7 +8,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 
 ## Table Of Contents
 
-* [Installion](#installion)
+* [Installation](#installation)
 * [Using](#using)
 
 ## Installation
