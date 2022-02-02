@@ -15,7 +15,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 
 ```php
 
-composer require jijihohococo/php-env:dev-master
+composer require jijihohococo/php-env
 
 ```
 
