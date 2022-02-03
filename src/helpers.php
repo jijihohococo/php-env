@@ -23,7 +23,7 @@ if(!function_exists('gete')){
 		$previousData=$data;
 		$dataset=ENV::getDataset();
 		if(isset($dataset[$data])){
-			return $dataset[$data];
+			return  preg_replace('/\s+/', '',$dataset[$data]);
 		}else{
 			$data=$data.'=';
 			$env=ENV::get();
@@ -33,7 +33,7 @@ if(!function_exists('gete')){
 			}
 			$getData=strpos($env,$data)!==FALSE ? getStringBetween($env,$data,$comma) : NULL;
 			ENV::setDataset($previousData,$getData);
-			return $getData;
+			return  preg_replace('/\s+/', '',$getData);
 		}
 	}
 }
