@@ -30,6 +30,8 @@ DB_NAME=mysql
 
 ```
 
+<b>You must not use space in your text file.</b>
+
 Firstly, you must declare your text file path
 
 ```php
