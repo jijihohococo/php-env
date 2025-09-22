@@ -45,8 +45,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git diff-index --quiet HEAD || git commit -m "PHPCBF: auto-fix coding standards (PHP ${{ matrix.php-version }})"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD
+          # commit only if there are changes
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "PHPCBF: auto-fix coding standards"
+            # determine branch for PRs or direct pushes
+            BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+            # pull remote changes to avoid rejection
+            git fetch origin $BRANCH
+            git rebase origin/$BRANCH
+            # push fixes
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:$BRANCH
+          else
+            echo "No changes to commit, skipping push."
+          fi
 
   # 🧪 Run PHPCS + PHPStan on multiple PHP versions
   php-quality:
