@@ -2,6 +2,7 @@
 
 namespace JiJiHoHoCoCo\PHPENV;
 
+use Exception;
 class ENV
 {
     private static $env;
