@@ -5,7 +5,7 @@ namespace JiJiHoHoCoCo\PHPENV;
 class ENV
 {
     private static $env;
-	private static $comma;
+    private static $comma;
     private static $dataset = [];
 
     public static function set(string $filePath)
