@@ -12,12 +12,11 @@ class ENV
 
     public static function set(string $filePath)
     {
-        if (is_readable($filePath)) {
-            self::$comma = rand();
-            self::$env = implode(self::$comma, file($filePath));
-        } else {
+        if (!is_readable($filePath)) {
             throw new Exception($filePath . ' is not exist', 1);
         }
+        self::$comma = rand();
+        self::$env = implode(self::$comma, file($filePath));
     }
 
     public static function get()
