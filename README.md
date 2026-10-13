@@ -49,3 +49,7 @@ And then you can get your data
 gete('APP_NAME');
 
 ```
+
+## Supported PHP Versions
+
+7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5
